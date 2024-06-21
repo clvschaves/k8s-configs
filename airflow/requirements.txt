@@ -1,0 +1,6 @@
+pandas
+numpy
+clickhouse-driver
+elasticsearch
+
+
