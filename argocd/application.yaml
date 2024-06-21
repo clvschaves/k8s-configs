@@ -17,3 +17,22 @@ spec:
       prune: true
       selfHeal: true
 
+------
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: airflow-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/seu-usuario/k8s-configs.git'
+    targetRevision: HEAD
+    path: 'airflow'
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
