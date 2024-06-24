@@ -28,7 +28,7 @@ spec:
   source:
     repoURL: 'https://github.com/clvschaves/k8s-configs.git'
     targetRevision: HEAD
-    path: 'airflow'
+    path: 'perfect'
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
