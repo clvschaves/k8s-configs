@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prefect
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prefect
+  template:
+    metadata:
+      labels:
+        app: prefect
+    spec:
+      containers:
+      - name: prefect
+        image: perfect-with-polaris:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 4200
+        env:
+        - name: PREFECT_ORION_API_HOST
+          value: "http://0.0.0.0:4200"
+
